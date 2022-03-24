@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 border-bottom">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/receptionist/adduser">Add Patient</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Edit Patient</a>
+                </li>
+            </ul>
+            <span>
+                <a class="nav-link" href="/logout">Logout</a>
+            </span>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <form method="post" th:action="@{/receptionist/adduser}" th:object="${user}">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="text" class="form-control" id="email" required th:field="*{Email}">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="text" class="form-control" id="password" required th:field="*{Password}">
+        </div>
+        <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" required th:field="*{FirstName}">
+        </div>
+        <div class="mb-3">
+            <label for="middleName" class="form-label">Middle Name</label>
+            <input type="text" class="form-control" id="middleName" required th:field="*{MiddleName}">
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" required th:field="*{LastName}">
+        </div>
+        <div class="mb-3">
+            <label for="houseNumber" class="form-label">House Number</label>
+            <input type="text" class="form-control" id="houseNumber" required th:field="*{HouseNumber}">
+        </div>
+        <div class="mb-3">
+            <label for="apartmentNumber" class="form-label">Apartment Number</label>
+            <input type="text" class="form-control" id="apartmentNumber" th:field="*{ApartmentNumber}">
+        </div>
+        <div class="mb-3">
+            <label for="street" class="form-label">Street</label>
+            <input type="text" class="form-control" id="street" th:field="*{Street}">
+        </div>
+        <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control" id="city" th:field="*{City}">
+        </div>
+        <div class="mb-3">
+            <label for="province" class="form-label">Province</label>
+            <input type="text" class="form-control" id="province" th:field="*{Province}">
+        </div>
+        <div class="mb-3">
+            <label for="postalCode" class="form-label">Postal Code</label>
+            <input type="text" class="form-control" id="postalCode" th:field="*{PostalCode}">
+        </div>
+        <div class="mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <select id="gender" class="form-select" th:field="*{Gender}">
+                <option value="M">M</option>
+                <option value="F">F</option>
+                <option value="O">O</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="dateOfBirth" class="form-label">Date Of Birth</label>
+            <input type="date" class="form-control" id="dateOfBirth" required th:field="*{DateOfBirth}">
+        </div>
+        <div class="mb-3">
+            <label for="ssn" class="form-label">SSN</label>
+            <input type="text" class="form-control" id="ssn" th:field="*{Ssn}">
+        </div>
+        <div class="mb-3">
+            <label for="cellPhoneNumber" class="form-label">Cellphone Number</label>
+            <input type="text" class="form-control" id="cellPhoneNumber" th:field="*{CellPhoneNumber}">
+        </div>
+        <div class="mb-3">
+            <label for="homePhoneNumber" class="form-label">Home phone Number</label>
+            <input type="text" class="form-control" id="homePhoneNumber" th:field="*{homePhoneNumber}">
+        </div>
+        <div th:object="${patient}">
+            <div class="mb-3">
+                <label for="insurance" class="form-label">Insurance</label>
+                <input type="text" class="form-control" id="insurance" required th:field="*{Insurance}">
+            </div>
+            <div class="mb-3">
+                <label for="parentID" class="form-label">Parent (if user under 15)</label>
+                <select id="parentID" class="form-select" th:field="*{Parent_id}">
+                    <option selected th:value="null" th:text="None"></option>
+                    <option th:each="u: ${allUsers}" th:value="${u.user_id}" th:text="${u.firstName} + ' ' + ${u.lastName} + ' (' + ${u.postalCode} + ')'"></option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Patient</button>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
