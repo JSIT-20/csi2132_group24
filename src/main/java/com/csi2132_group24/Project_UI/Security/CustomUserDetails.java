@@ -1,11 +1,7 @@
 package com.csi2132_group24.Project_UI.Security;
 
 import java.util.Collection;
-import java.util.Optional;
 
-import com.csi2132_group24.Project_UI.DTO.Patient;
-import com.csi2132_group24.Project_UI.PatientRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

@@ -1,4 +1,4 @@
-package com.csi2132_group24.Project_UI;
+package com.csi2132_group24.Project_UI.Repository;
 
 import com.csi2132_group24.Project_UI.DTO.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
