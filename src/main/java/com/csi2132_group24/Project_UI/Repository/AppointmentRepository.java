@@ -12,4 +12,9 @@ public interface AppointmentRepository extends JpaRepository<Appointment, Intege
             value = "SELECT a.* FROM public.appointment a WHERE patient_id=:user_id",
             nativeQuery = true)
     public List<Appointment> findAllAppointmentsForPatient(Integer user_id);
+
+    @Query(
+            value = "SELECT a.* FROM public.appointment a WHERE dentist_id=:user_id",
+            nativeQuery = true)
+    public List<Appointment> findAllAppointmentsForDentist(Integer user_id);
 }
