@@ -10,7 +10,7 @@
 <h3 class="text-center my-5">Please Choose a User Interface</h3>
 
 <div class="d-flex justify-content-evenly">
-    <a th:if="${isPatient}" class="btn btn-primary" href="/receptionist/addpatient" role="button">Patient</a>
+    <a th:if="${isPatient}" class="btn btn-primary" href="/patient/appointments" role="button">Patient</a>
     <a th:if="${isReceptionist}" class="btn btn-primary" href="/receptionist/addpatient" role="button">Receptionist</a>
     <a th:if="${isDentistOrHygienist}" class="btn btn-primary" href="/receptionist/addpatient" role="button">Dentist or Hygienist</a>
 </div>

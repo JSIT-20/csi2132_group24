@@ -38,6 +38,11 @@ public class BaseController {
         return "roles";
     }
 
+    @GetMapping("/*")
+    public String catchAll(Model model){
+        return "redirect:/roles";
+    }
+
     public Boolean isReceptionist(Optional<Employee> employee){
         if(employee.isEmpty()){
             return false;

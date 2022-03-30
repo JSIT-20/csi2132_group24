@@ -1,6 +1,8 @@
 package com.csi2132_group24.Project_UI.Controller;
 
+import com.csi2132_group24.Project_UI.DTO.Appointment;
 import com.csi2132_group24.Project_UI.DTO.Patient;
+import com.csi2132_group24.Project_UI.Repository.AppointmentRepository;
 import com.csi2132_group24.Project_UI.Repository.PatientRepository;
 import com.csi2132_group24.Project_UI.Security.User;
 import com.csi2132_group24.Project_UI.Security.UserRepository;
@@ -22,6 +24,9 @@ public class ReceptionistController {
 
     @Autowired
     private PatientRepository patientRepo;
+
+    @Autowired
+    private AppointmentRepository appointmentRepo;
 
     @GetMapping("/receptionist/addpatient")
     public String getAddPatient(Model model){
@@ -47,6 +52,14 @@ public class ReceptionistController {
         return "receptionist/editPatientForm";
     }
 
+    @GetMapping("/receptionist/createappointment")
+    public String createAppointment(Model model){
+        model.addAttribute("patients", userRepo.findAllPatientUsers());
+        model.addAttribute("dentistsAndHygienists", userRepo.findAllDentistsAndHygienists());
+        model.addAttribute("appointment", new Appointment());
+        return "receptionist/createAppointment";
+    }
+
     @PostMapping("/receptionist/editpatient/{id}")
     public String updatePatient(@PathVariable("id") Integer id, @Valid User user, @Valid Patient patient, BindingResult result, Model model){
         if(result.hasErrors()){
@@ -68,7 +81,18 @@ public class ReceptionistController {
         userRepo.save(user);
         patient.setUser_id(user.getUser_id());
         patientRepo.save(patient);
-        return "receptionist/addpatient";
+        return "redirect:/receptionist/addpatient";
+    }
+
+    @PostMapping("/receptionist/createappointment")
+    public String postCreateAppointment(@Valid Appointment appointment, BindingResult result, Model model){
+        if(result.hasErrors()){
+            System.out.println(result);
+            System.out.println("hi");
+            return "oops";
+        }
+        appointmentRepo.save(appointment);
+        return "redirect:/receptionist/createappointment";
     }
 
 }

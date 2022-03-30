@@ -18,4 +18,9 @@ public interface UserRepository extends JpaRepository<User, Integer> {
            nativeQuery = true)
     public List<User> findAllPatientUsers();
 
+    @Query(
+            value = "SELECT u.* FROM public.user u, public.employee e WHERE (e.role = 'Dentist' OR e.role = 'Hygienist') AND (u.user_id = e.user_id)",
+            nativeQuery = true)
+    public List<User> findAllDentistsAndHygienists();
+
 }
