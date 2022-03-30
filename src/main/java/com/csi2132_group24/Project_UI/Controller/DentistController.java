@@ -52,5 +52,5 @@ public class DentistController {
     public CustomUserDetails getLoggedInUser(){
         return (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     }
-    
+
 }
