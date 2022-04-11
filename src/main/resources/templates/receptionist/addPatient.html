@@ -33,47 +33,47 @@
     <form method="post" th:action="@{/receptionist/addpatient}" th:object="${user}">
         <div class="mb-3">
             <label for="email" class="form-label">Email address</label>
-            <input type="text" class="form-control" id="email" required th:field="*{Email}">
+            <input maxlength="70" type="text" class="form-control" id="email" required th:field="*{Email}">
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="text" class="form-control" id="password" required th:field="*{Password}">
+            <input maxlength="50" type="text" class="form-control" id="password" required th:field="*{Password}">
         </div>
         <div class="mb-3">
             <label for="firstName" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="firstName" required th:field="*{FirstName}">
+            <input maxlength="50" type="text" class="form-control" id="firstName" required th:field="*{FirstName}">
         </div>
         <div class="mb-3">
             <label for="middleName" class="form-label">Middle Name</label>
-            <input type="text" class="form-control" id="middleName" required th:field="*{MiddleName}">
+            <input maxlength="50" type="text" class="form-control" id="middleName" required th:field="*{MiddleName}">
         </div>
         <div class="mb-3">
             <label for="lastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="lastName" required th:field="*{LastName}">
+            <input maxlength="50" type="text" class="form-control" id="lastName" required th:field="*{LastName}">
         </div>
         <div class="mb-3">
             <label for="houseNumber" class="form-label">House Number</label>
-            <input type="text" class="form-control" id="houseNumber" required th:field="*{HouseNumber}">
+            <input maxlength="6" type="text" class="form-control" id="houseNumber" required th:field="*{HouseNumber}">
         </div>
         <div class="mb-3">
             <label for="apartmentNumber" class="form-label">Apartment Number</label>
-            <input type="text" class="form-control" id="apartmentNumber" th:field="*{ApartmentNumber}">
+            <input maxlength="6" type="text" class="form-control" id="apartmentNumber" th:field="*{ApartmentNumber}">
         </div>
         <div class="mb-3">
             <label for="street" class="form-label">Street</label>
-            <input type="text" class="form-control" id="street" th:field="*{Street}">
+            <input maxlength="70" type="text" class="form-control" id="street" required th:field="*{Street}">
         </div>
         <div class="mb-3">
             <label for="city" class="form-label">City</label>
-            <input type="text" class="form-control" id="city" th:field="*{City}">
+            <input maxlength="70" type="text" class="form-control" id="city" required th:field="*{City}">
         </div>
         <div class="mb-3">
             <label for="province" class="form-label">Province</label>
-            <input type="text" class="form-control" id="province" th:field="*{Province}">
+            <input maxlength="26" type="text" class="form-control" id="province" required th:field="*{Province}">
         </div>
         <div class="mb-3">
             <label for="postalCode" class="form-label">Postal Code</label>
-            <input type="text" class="form-control" id="postalCode" th:field="*{PostalCode}">
+            <input maxlength="6" type="text" class="form-control" id="postalCode" required th:field="*{PostalCode}">
         </div>
         <div class="mb-3">
             <label for="gender" class="form-label">Gender</label>
@@ -89,20 +89,20 @@
         </div>
         <div class="mb-3">
             <label for="ssn" class="form-label">SSN</label>
-            <input type="text" class="form-control" id="ssn" th:field="*{Ssn}">
+            <input maxlength="9" type="text" class="form-control" id="ssn" required th:field="*{Ssn}">
         </div>
         <div class="mb-3">
             <label for="cellPhoneNumber" class="form-label">Cellphone Number</label>
-            <input type="text" class="form-control" id="cellPhoneNumber" th:field="*{CellPhoneNumber}">
+            <input maxlength="10" type="text" class="form-control" id="cellPhoneNumber" th:field="*{CellPhoneNumber}">
         </div>
         <div class="mb-3">
             <label for="homePhoneNumber" class="form-label">Home phone Number</label>
-            <input type="text" class="form-control" id="homePhoneNumber" th:field="*{homePhoneNumber}">
+            <input maxlength="10" type="text" class="form-control" id="homePhoneNumber" th:field="*{homePhoneNumber}">
         </div>
         <div th:object="${patient}">
             <div class="mb-3">
                 <label for="insurance" class="form-label">Insurance</label>
-                <input type="text" class="form-control" id="insurance" required th:field="*{Insurance}">
+                <input maxlength="20" type="text" class="form-control" id="insurance" required th:field="*{Insurance}">
             </div>
             <div class="mb-3">
                 <label for="parentID" class="form-label">Parent (if user under 15)</label>

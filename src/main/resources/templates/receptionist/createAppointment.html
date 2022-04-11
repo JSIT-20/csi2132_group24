@@ -56,15 +56,15 @@
     </div>
     <div class="mb-3">
       <label for="type" class="form-label">Appointment Type</label>
-      <input type="text" class="form-control" id="type" required th:field="*{Type}">
+      <input maxlength="50" type="text" class="form-control" id="type" required th:field="*{Type}">
     </div>
     <div class="mb-3">
       <label for="status" class="form-label">Status</label>
-      <input type="text" class="form-control" id="status" required th:field="*{Status}">
+      <input maxlength="11" type="text" class="form-control" id="status" required th:field="*{Status}">
     </div>
     <div class="mb-3">
       <label for="room" class="form-label">Room</label>
-      <input type="text" class="form-control" id="room" required th:field="*{Room}">
+      <input maxlength="10" type="text" class="form-control" id="room" required th:field="*{Room}">
     </div>
     <button type="submit" class="btn btn-primary mb-5">Create Appointment</button>
   </form>
