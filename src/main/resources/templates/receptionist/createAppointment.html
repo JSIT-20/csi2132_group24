@@ -37,7 +37,7 @@
       </select>
     </div>
     <div class="mb-3">
-      <label for="dentistOrHygienist_id" class="form-label">Patient</label>
+      <label for="dentistOrHygienist_id" class="form-label">Dentist/Hygienist</label>
       <select id="dentistOrHygienist_id" class="form-select" th:field="*{Dentist_id}">
         <option th:each="d: ${dentistsAndHygienists}" th:value="${d.user_id}" th:text="${d.firstName} + ' ' + ${d.lastName} + ' (' + ${d.email} + ')'"></option>
       </select>
