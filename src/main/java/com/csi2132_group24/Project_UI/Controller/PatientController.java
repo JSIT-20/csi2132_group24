@@ -29,14 +29,14 @@ public class PatientController {
     public String getAppointmentsPatient(Model model){
         CustomUserDetails user = getLoggedInUser();
         model.addAttribute("appointments", appointmentRepo.findAllAppointmentsForPatient(user.getUser_id()));
-        return "/patient/appointments";
+        return "patient/appointments";
     }
 
     @GetMapping("/patient/records")
     public String getRecordsPatient(Model model){
         CustomUserDetails user = getLoggedInUser();
         model.addAttribute("records", recordRepo.findAllRecordsForPatient(user.getUser_id()));
-        return "/patient/records";
+        return "patient/records";
     }
 
     public CustomUserDetails getLoggedInUser(){

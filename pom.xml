@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.csi2132_group24</groupId>
 	<artifactId>Project_UI</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1</version>
 	<name>Project_UI</name>
 	<description>UI for csi2132 project - Group 24</description>
 	<properties>
